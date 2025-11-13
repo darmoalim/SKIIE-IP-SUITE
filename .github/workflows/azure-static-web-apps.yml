@@ -38,3 +38,4 @@ jobs:
           app_location: "/" # App source code path
           api_location: ""  # Leave empty for no functions
           output_location: "out" # location of your static export
+          app_artifact_location: "out" # <-- ensure the action uploads the 'out' folder
