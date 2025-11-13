@@ -10,7 +10,7 @@ jobs:
   build_and_deploy_job:
     runs-on: ubuntu-latest
 
-    # <<< Add this env to force legacy peer deps for npm in CI >>>
+    # Force legacy peer deps in CI and increase memory for Node
     env:
       npm_config_legacy_peer_deps: 'true'
       NODE_OPTIONS: '--max-old-space-size=4096'
@@ -21,7 +21,6 @@ jobs:
         with:
           submodules: true
 
-      # If you need Node setup step (optional)
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -32,10 +31,12 @@ jobs:
         id: swa
         uses: Azure/static-web-apps-deploy@v1
         with:
+          # <-- keep this exact secret name (Azure generated one)
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_LIVELY_CLIFF_0BF6E6700 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e., PR comments)
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/" # App source code path
-          api_location: ""  # Leave empty for no functions
-          output_location: "out" # location of your static export
-          app_artifact_location: "out" # <-- ensure the action uploads the 'out' folder
+          app_location: "/" 
+          api_location: ""  
+          output_location: "out"
+          app_artifact_location: "out"
+
