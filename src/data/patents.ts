@@ -147,7 +147,7 @@ export const patents: Patent[] = [
     id: 13,
     title: "Cashmir Biotech PVT Ltd",
     inventors: ["Dr. Khalid Z. Masoodi"],
-    grantDate: "1905-07-17",
+    grantDate: "2022-03-17",
     patentNumber: "Trade Mark No 6062832",
     applicationNumber: "",
     abstract: "A registered trade mark for the business name 'Cashmir Biotech PVT Ltd', protecting the brand identity in commerce.",
