@@ -13,7 +13,11 @@ export default function Header() {
           width={500}
           height={180}
           priority
-          className="h-[22px] md:h-[28px] w-auto object-contain translate-y-[1px]"
+          className="
+            h-[16px]   /* mobile size */
+            md:h-[22px]   /* your original desktop size */
+            w-auto object-contain translate-y-[1px]
+          "
         />
       </div>
 
@@ -25,7 +29,11 @@ export default function Header() {
           width={1500}
           height={180}
           priority
-          className="h-[46px] md:h-[54px] w-auto object-contain"
+          className="
+            h-[32px]   /* mobile size */
+            md:h-[46px]   /* original desktop size */
+            w-auto object-contain
+          "
         />
       </div>
     </header>
